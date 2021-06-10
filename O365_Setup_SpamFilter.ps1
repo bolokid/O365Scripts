@@ -22,8 +22,7 @@
 
 	Write-Host "checking if prereq files exist"
 	#check if Allowed Senders list exists......
-		IF 
-			(test-path -path C:\office365Scripts\AllowedSenders.Txt) {
+		IF(test-path -path C:\office365Scripts\AllowedSenders.Txt){ 
 			Write-Host "Allowed Senders file exists"
 	}
 		Else {
@@ -32,8 +31,7 @@
 			
 	}
 	#check if allowed Sender Domains list exists......
-		IF 
-			(test-path -path C:\O365Scripts\AllowedSenderdomains.Txt) {
+		IF(test-path -path C:\O365Scripts\AllowedSenderdomains.Txt){
 			Write-Host "Allowed Sender domain file exists"
 	}
 		
@@ -44,11 +42,8 @@
 	}
 	
 	#check if  Blocked Domains list exists......
-		IF 
-			(test-path -path C:\O365Scripts\BlockedSenderdomains.Txt) {
-			Write-Host "Blocked Sender domain file exists"
-	
-	
+		IF(test-path -path C:\O365Scripts\BlockedSenderdomains.Txt){ 
+				Write-Host "Blocked Sender domain file exists"
 	}
 		Else {
 			Write-Host "BlockedSenderdomains File was created please populate"
@@ -57,23 +52,21 @@
 	}
 	
 	#check if Blocked Senders list exists......
-		IF 
-			(test-path -path C:\O365Scripts\BlockedSenders.Txt) {
-			Write-Host "Blocked Senders file exists"
-	}
+		IF(test-path -path C:\O365Scripts\BlockedSenders.Txt){
+				Write-Host "Blocked Senders file exists"
+	} 
 	
+	Else {
 	
-		Else {
 			Write-Host "Blockedsenders File was created please populate"	
 					echo "##BlockedSenders list sender below 1 per line#REMOVE THIS COMMENT BEFORE EXECUTION#" >> C:\office365scripts\Blockedsenders.txt
 			
 	}
 	
 	#check if allowed IP list exists......
-		IF 
-			(test-path -path C:\O365Scripts\AllowedIPS.Txt) {
+		IF(test-path -path C:\O365Scripts\AllowedIPS.Txt){
 			Write-Host "Allowed Sender IPS file exists"
-			}
+	}
 		Else {
 			write-host "AllowedIPS File was created please populate"
 			echo "##list ips Per the following format;
@@ -83,10 +76,9 @@
 	}
 			
 	#check if Blocked IP list exists......
-		IF 
-			(test-path -path C:\O365Scripts\BlockedIPS.Txt) {
+		IF(test-path -path C:\O365Scripts\BlockedIPS.Txt){
 			Write-Host "Blocked Sender IPS file exists"
-			}
+	}
 		Else {
 			write-host "BlockedIPS File was created please populate"
 			echo "##list ips Per the following format;
