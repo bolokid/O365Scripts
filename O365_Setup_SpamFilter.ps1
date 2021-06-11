@@ -139,6 +139,9 @@
 		Write-Host "Adding Address(s) to Default spam Block list...."
 		Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add=$Blockedsenders}
 	}
+	
+# Enables Region Block and adds top offenders to the list.
+	Set-HostedContentFilterPolicy default -EnableRegionBlockList $true -RegionBlockList BR,CN,DE,IR,IT,NL,RU,TH,UA,VN
 
 # Close the Session or bad things happen!!!
 	Remove-PSSession $Session
