@@ -1,6 +1,5 @@
 ###			     Setup O365 Spamfilter Script       ###
 ###				 Written by Daniel Hernandez		###
-###				Dhernandez@nerdsthatcare.com		###
 
 # On error, stop the script
 	$ErrorActionPreference = "Continue"
